@@ -62,7 +62,7 @@ DigitalOut::DigitalOut(PinName pin_name, bool value) {
   default:
     ZPP_ASSERT(false, "Invalid pinName %d", static_cast<int>(pin_name));
     ZPP_LOG_ERR("Invalid pinName %d", static_cast<int>(pin_name));
-    break;
+    return;
   }
 
   if (!gpio_is_ready_dt(&_gpio)) {
